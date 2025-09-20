@@ -1,19 +1,23 @@
-# Smart-Waste-Monitoring-System
+# Real-Time Container Fill Tracker
 
-# 🗑️ Smart Waste Monitoring System with Cloud Integration
 
-An IoT-based smart dustbin using **Ubidots cloud** for real-time waste level monitoring with automated alerts and dashboard visualizations.
+🗑️ Real-Time Waste Level Tracker with Cloud Integration
 
-## 🔍 Overview
+An IoT-powered real-time waste tracking system that uses Ubidots Cloud for continuous bin level monitoring, automated alerts, and interactive dashboard visualizations.
 
-This project is built using:
-- **Ultrasonic Sensor (HC-SR04)**
-- **NodeMCU (ESP8266/ESP32)**
-- **Ubidots IoT Cloud Platform**
+🔍 Overview
 
-> 📈 Real-time data monitoring with 95% accuracy  
-> 📧 Automated email alerts triggered at 75% waste threshold  
-> ♻️ Achieved 40% improvement in waste collection scheduling
+This project is implemented using:
+
+Ultrasonic Sensor (HC-SR04)
+
+NodeMCU (ESP8266/ESP32)
+
+Ubidots IoT Cloud Platform
+
+📈 Real-time tracking with ~95% accuracy
+📧 Automated email/SMS alerts when bin level exceeds 75% capacity
+♻️ Optimized waste collection scheduling with 40% efficiency improvement
 
 ## 🎥 Project Demo Video
 
