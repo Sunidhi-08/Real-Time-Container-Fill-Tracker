@@ -1,0 +1,67 @@
+# Smart Waste Monitoring System - Data Log and Methodology
+
+## 1. SENSOR SETUP AND MEASUREMENT METHOD
+
+- **Sensor Used:** HC-SR04 Ultrasonic Sensor  
+- **Controller:** NodeMCU (ESP8266)  
+- **Measurement Principle:**  
+  Distance = (Time × Speed of Sound) / 2  
+
+- **Dustbin Height:** 40 cm (empty)  
+- **Waste Threshold:** 75% (Alert triggered at ~30 cm filled)  
+
+Sensor is mounted on the lid; it measures distance from sensor to waste surface.
+
+## 2. HOW LEVEL IS CALCULATED
+
+**Formula:**  
+Distance_to_waste = Sensor Reading (in cm)  
+Level (%) = ((Dustbin_Height - Distance_to_waste) / Dustbin_Height) × 100  
+
+**Example Calculation:**  
+- Sensor Reading = 5.2 cm  
+- Level = ((40 - 5.2) / 40) × 100 = **87.0%**
+
+## 3. SAMPLE DATA (From Real-Time Readings)
+
+- **DateTime (UTC):** 2025-04-17 05:51:39  
+- **Sensor Reading:** 4.4 cm  
+- **Calculated Level:** 89.00%  
+- **Alert Triggered:** YES (Threshold = 75%)
+
+- **DateTime (UTC):** 2025-04-17 05:53:00  
+- **Sensor Reading:** 5.2 cm  
+- **Calculated Level:** 87.00%  
+- **Displayed on:** Ubidots Dashboard
+
+## 4. ACCURACY DETERMINATION
+
+We tested 10 real-time readings at various fill levels (0% to 100%).
+
+### Sample Test Comparison:
+
+| **Test No.** | **Actual Fill Level**  | **Sensor-Based Reading**  | **Error (%)** |
+|--------------|------------------------|---------------------------|---------------|
+| 1            | 20%                    | 24%                       | 4.0%          |
+| 2            | 40%                    | 44.5%                     | 4.5%          |
+| 3            | 60%                    | 65%                       | 5.0%          |
+| 4            | 80%                    | 76%                       | 4.0%          |
+| 5            | 100%                   | 92%                       | 8.0%          |
+| 6            | 70%                    | 67.2%                     | 2.8%          |
+| 7            | 30%                    | 33.9%                     | 3.9%          |
+| 8            | 90%                    | 86%                       | 4.0%          |
+| 9            | 50%                    | 56%                       | 6.0%          |
+| 10           | 10%                    | 15%                       | 5.0%          |
+
+- **Average Error:** ~4.72%  
+- **Final Reported Accuracy:** **~95%**
+
+> This accuracy reflects slight deviations due to real-world conditions like ambient noise, irregular surfaces, and sensor calibration.
+
+## 5. SUMMARY
+
+- 📶 Data collected using HC-SR04 + NodeMCU  
+- ☁️ Level data pushed to Ubidots IoT Cloud over Wi-Fi  
+- 📩 Email alerts triggered automatically using Ubidots Webhook  
+- ♻️ Result: Reliable, automated waste monitoring with reduced human intervention
+
