@@ -1,9 +1,6 @@
-# Real-Time Container Fill Tracker
+🗑️ Real-Time Container Fill Tracker with Cloud Integration
 
-
-🗑️ Real-Time Waste Level Tracker with Cloud Integration
-
-An IoT-powered real-time waste tracking system that uses Ubidots Cloud for continuous bin level monitoring, automated alerts, and interactive dashboard visualizations.
+An IoT-powered real-time container fill tracking system that uses Ubidots Cloud for continuous container level monitoring, automated alerts, and interactive dashboard visualizations.
 
 🔍 Overview
 
@@ -15,46 +12,38 @@ NodeMCU (ESP8266/ESP32)
 
 Ubidots IoT Cloud Platform
 
-📈 Real-time tracking with ~95% accuracy
-📧 Automated email/SMS alerts when bin level exceeds 75% capacity
-♻️ Optimized waste collection scheduling with 40% efficiency improvement
+📈 Real-time container tracking with ~95% accuracy
+📧 Automated email/SMS alerts when container fill level exceeds 75% capacity
+♻️ Optimized collection scheduling with 40% efficiency improvement
 
-## 🎥 Project Demo Video
+🎥 Project Demo Video
 
-[![Watch Demo on YouTube](https://img.youtube.com/vi/C0m3z5l4kmY/hqdefault.jpg)](https://youtube.com/shorts/C0m3z5l4kmY?si=pyXL2To-KDi-KHO3)
+👆 Click the thumbnail above to watch the demo video on YouTube.
 
-> 👆 Click the thumbnail above to watch the demo video on YouTube.
+📷 Snapshots
+🗑️ Complete Container Setup
 
+📩 Email Alert at Fill Threshold Breach
 
-## 📷 Snapshots
+📊 Ubidots Dashboard Visualization
 
-### 🗑️ Complete Smart Dustbin Setup
-![WhatsApp Image 2025-07-09 at 10 02 23_88577c65](https://github.com/user-attachments/assets/f7f14459-08b7-4647-9ea2-5c5f02368944)
+📁 Sample Data
 
+Real-time readings and trigger logs are available in:
+📄 container_data.txt
 
-### 📩 Email Alert at Threshold Breach
+📌 Applications
 
-![WhatsApp Image 2025-07-09 at 10 03 30_52c50bc9](https://github.com/user-attachments/assets/5ba61304-9039-4816-942b-d4579fba16ac)
+Smart City Container Monitoring
 
+Industrial Material/Waste Containers
 
-### 📊 Ubidots Dashboard Visualization
-![WhatsApp Image 2025-07-09 at 10 04 09_068d79e7](https://github.com/user-attachments/assets/622eb92c-eb5a-4aeb-8c00-738dae056d37)
+Smart Campus & Facility Management
 
+💡 Key Learnings
 
-## 📁 Sample Data
+IoT sensor integration with cloud platforms
 
-Real-time readings and trigger logs are available in:  
-📄 [`waste_data.txt`](waste_data.txt)
+Real-time alerting using Webhooks
 
-
-## 📌 Applications
-- Smart City Waste Management
-- Industrial Waste Bins
-- Smart Campus Projects
-
-## 💡 Key Learnings
-- IoT sensor integration with cloud platforms
-- Real-time alert systems using Webhooks
-- Visualization and data tracking using Ubidots
-
-
+Data visualization and container tracking with Ubidots
