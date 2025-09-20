@@ -1,0 +1,74 @@
+# Real-Time Container Fill Tracker - Data Log and Methodology  
+
+## 1. SENSOR SETUP AND MEASUREMENT METHOD  
+
+- **Sensor Used:** HC-SR04 Ultrasonic Sensor  
+- **Controller:** NodeMCU (ESP8266)  
+- **Measurement Principle:**  
+  `Distance = (Time × Speed of Sound) / 2`  
+
+- **Container Height:** 40 cm (empty)  
+- **Fill Threshold:** 75% (Alert triggered at ~30 cm filled)  
+
+Sensor is mounted on the container lid; it measures distance from the sensor to the material/waste surface.  
+
+---
+
+## 2. HOW FILL LEVEL IS CALCULATED  
+
+**Formula:**  
+Distance_to_material = Sensor Reading (cm)
+Fill Level (%) = ((Container_Height - Distance_to_material) / Container_Height) × 100
+
+**Example Calculation:**  
+- Sensor Reading = 5.2 cm  
+- Fill Level = `((40 - 5.2) / 40) × 100 = 87.0%`  
+
+---
+
+## 3. SAMPLE DATA (From Real-Time Readings)  
+
+- **DateTime (UTC):** 2025-04-17 05:51:39  
+- **Sensor Reading:** 4.4 cm  
+- **Calculated Fill Level:** 89.00%  
+- **Alert Triggered:** ✅ YES (Threshold = 75%)  
+
+- **DateTime (UTC):** 2025-04-17 05:53:00  
+- **Sensor Reading:** 5.2 cm  
+- **Calculated Fill Level:** 87.00%  
+- **Displayed on:** Ubidots Dashboard  
+
+---
+
+## 4. ACCURACY DETERMINATION  
+
+We tested 10 real-time readings at various fill levels (0% to 100%).  
+
+### Sample Test Comparison:  
+
+| **Test No.** | **Actual Fill Level** | **Sensor-Based Reading** | **Error (%)** |
+|--------------|------------------------|---------------------------|---------------|
+| 1            | 20%                    | 24%                       | 4.0%          |
+| 2            | 40%                    | 44.5%                     | 4.5%          |
+| 3            | 60%                    | 65%                       | 5.0%          |
+| 4            | 80%                    | 76%                       | 4.0%          |
+| 5            | 100%                   | 92%                       | 8.0%          |
+| 6            | 70%                    | 67.2%                     | 2.8%          |
+| 7            | 30%                    | 33.9%                     | 3.9%          |
+| 8            | 90%                    | 86%                       | 4.0%          |
+| 9            | 50%                    | 56%                       | 6.0%          |
+| 10           | 10%                    | 15%                       | 5.0%          |  
+
+- **Average Error:** ~4.72%  
+- **Final Reported Accuracy:** **~95%**  
+
+> ⚠️ Accuracy deviations occur due to factors like ambient noise, irregular container surfaces, and sensor calibration.  
+
+---
+
+## 5. SUMMARY  
+
+- 📶 Data collected using **HC-SR04 + NodeMCU**  
+- ☁️ Fill level data pushed to **Ubidots IoT Cloud** over Wi-Fi  
+- 📩 Email/SMS alerts triggered automatically using **Ubidots Webhooks**  
+- ♻️ **Result:** Reliable, automated container fill tracking with reduced manual intervention  
